@@ -32,7 +32,9 @@ header{
     margin-right: 7%;
 }
 
-h1{
+.guide,
+.explore,
+footer{
     color: #F7F7F7;
 }
 
@@ -41,10 +43,8 @@ h1{
     text-align: center;
     margin-top: 11%;
     margin-bottom: 5%;
-
 }
 
-/* Buttons */
 nav{
     text-align: center;
     display: flex;
@@ -71,38 +71,25 @@ nav{
 }
 
 .yellow{
-    background: #FFCB05
+    background: #FFCB05;
 }
 
 .yellow:hover{
     background: linear-gradient(to bottom, #FFCB05, #B28F03);
 }
 
-#choose-type{
-    visibility: hidden;
-   
+#choose-menu{
+    visibility: hidden;   
 }
 
 #choose-weakness{
     visibility: hidden;
 }
 
-#chart-div{
-    display: flex !important;
-    justify-content: center;
-    width: auto !important; 
-    height: auto !important;
-}
-
-/* CSS-table e cards */
-
 .table{
     background-color: #D4D4D4;
     width: 50%;
     margin: 1rem 20rem;
-    /* display: flex;
-    flex-direction: column;
-    align-items: center; */
     border-radius: 3%;
     color: #171C3C;
     padding: 2rem 1rem 3rem;
@@ -129,6 +116,13 @@ nav{
 
 .calc-table th{
     padding: 0.3rem 1rem;
+}
+
+#chart-div{
+    display: flex !important;
+    justify-content: center;
+    width: auto !important; 
+    height: auto !important;
 }
 
 .pokemons-container{
@@ -203,4 +197,9 @@ nav{
     width: 30%;
 }
 
-
+footer{
+    text-align: center;
+    background-color: #171C3C;
+    padding: 2rem;
+    margin-top: 4rem;
+}

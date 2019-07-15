@@ -1,9 +1,9 @@
 // fetch('./data/pokemon/pokemon.json').then(response => {
 //   return response.json();
 // }).then(data => {
-
 window.onload = function () {
   showPokemons();
+  sort();
   printTable();
   drawChart();
   pokemonsAmountTable();
@@ -134,7 +134,6 @@ function maximumSpawnChance() {
 
 function sortSpawnTime() {
   let spawnTime = (filter().map((pokemon) => pokemon['spawn_time'])).filter(value => value !== "N/A");
-  // if (spawnTime.length > 
   let secondsArray = [];
   for (times of spawnTime) {
     let a = times.split(':');
@@ -246,45 +245,46 @@ function printTable() {
     </tr>`
 }
 
-// Gráfico
-
 google.charts.load('current', { 'packages': ['corechart'] });
 google.charts.setOnLoadCallback(drawChart);
 
 function drawChart() {
-  var data = google.visualization.arrayToDataTable([
+  let data = google.visualization.arrayToDataTable([
     ['Year', 'Candy'],
     ['Min', minimumCandy()],
     ['Med', averageCandy()],
     ['Max', maximumCandy()]
   ]);
 
-  var options = {
+  let options = {
     title: 'Candy to Evolve',
     hAxis: { title: '', titleTextStyle: { color: 'red' } },
     vAxis: { minValue: 0 }
   };
 
-  var chart = new google.visualization.AreaChart(document.getElementById('chart-div'));
+  let chart = new google.visualization.AreaChart(document.getElementById('chart-div'));
   chart.draw(data, options);
 }
 
-//  fim gráfico
-
 function sort() {
   let sortMenuValue = sortMenu.value;
+  let sortValue = sortMenuValue;
+
+  if (sortMenuValue === 'none') {
+    sortValue = 'num';
+  }
   let orderedPokemons = filter().sort(function (a, b) {
 
-    if (a[sortMenuValue] < b[sortMenuValue]) {
+    if (a[sortValue] < b[sortValue]) {
       return -1;
     }
-    if (a[sortMenuValue] > b[sortMenuValue]) {
+    if (a[sortValue] > b[sortValue]) {
       return 1;
     }
-    if (!a[sortMenuValue]) {
+    if (!a[sortValue]) {
       return 1;
     }
-    if (!b[sortMenuValue]) {
+    if (!b[sortValue]) {
       return -1;
     }
     return 0;
@@ -322,5 +322,3 @@ function showPokemons() {
 }
 
 // })
-
-

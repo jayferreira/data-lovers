@@ -3,11 +3,10 @@
 
 <head>
   <meta charset="utf-8">
-  <!-- <meta name="viewport" content="width=device-width", initial-scale=1> -->
   <meta name="description" content="Aplicação para auxiliar jogadores de Pokémon Go.">
   <meta name="keywords" content="pokemon go, pokémon go, spawn chance, spawn time, candy count">
   <title>Pokémon Go Guide</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="./src/style.css" />
   <link href="https://fonts.googleapis.com/css?family=Alegreya" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
     integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
@@ -22,7 +21,6 @@
     </div>
     <div class="col-xs-6  col-md-6">
       <h1 class="explore">Explore informações sobre seus Pokémons favoritos!</h1>
-    </div>
     </div>
   </header>
 
@@ -63,28 +61,30 @@
   </nav>
 
   <div class="row">
-  <section class="table col-xs-12  col-md-12">
-    <div class="table-title">
-      <h3>DADOS GERAIS</h3>
-      <h4><span id="total-number"></span> pokémons</h4>
-    </div>
-    <table id="calc-table" class="calc-table"></table>
-  </section>
-</div>
-
-  <div class="row">
-    <div id="chart-div" class="col-xs-12  col-md-12"></div>
+    <section class="table col-xs-12  col-md-12">
+      <div class="table-title">
+        <h3>DADOS GERAIS</h3>
+        <h4><span id="total-number"></span> pokémons</h4>
+      </div>
+      <table id="calc-table" class="calc-table"></table>
+    </section>
   </div>
+
+  <section class="row">
+    <div id="chart-div" class="col-xs-12  col-md-12"></div>
+  </section>
 
   <main>
     <section id="pokemons-container" class="pokemons-container"></section>
   </main>
 
   <footer>
-    Versão 0.0.4
+    <p>Pokémon Go Guide - Versão 0.0.5</p>
+    <p>Desenvolvido por Jéssica Ferreira e Marina Keunecke para  < Laboratória ></p>
   </footer>
-  <script src="./data/pokemon/pokemon.js"></script>
-  <script src="main.js"></script>
+
+  <script src="./src/data/pokemon/pokemon.js"></script>
+  <script src="./src/main.js"></script>
 </body>
 
 </html>
